@@ -1,0 +1,14 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+body{
+    font-family: 'montserrat', sans-serif, Arial, Helvetica, ;
+}
+
+:root{
+    --background-color: #050708;
+    --font-color: rgba(255, 255, 255, 0.815);
+    --logo-color: #dba35e;
+}

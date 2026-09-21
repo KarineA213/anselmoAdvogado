@@ -1,0 +1,114 @@
+.hero-container{
+    background: var(--background-color);
+    height: 90vh;
+    display: flex;
+    position: relative;
+    overflow: hidden;
+    align-items: center;
+}
+
+.hero-container img{
+    width: 100%;
+    height: 100%;
+    opacity: .6;
+    position: absolute;
+    inset: 0;
+    z-index: 0;
+}
+
+.overlay{
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+        to right,
+        rgb(0, 0, 0),
+        rgba(0, 0, 0, 0.7),
+        rgba(230, 224, 224, 0)
+    );
+    z-index: 1;
+}
+
+.hero-text{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 0 5rem;
+    width: 50%;
+    position: relative;
+    z-index: 2;
+    gap: 2rem;
+}
+
+.hero-text-first-line{
+    color: var(--logo-color);
+    text-transform: uppercase;
+}
+
+.hero-text h1, p{
+    color: var(--font-color);
+}
+
+.hero-text h1{
+    font-size: 3.5rem;
+}
+
+.hero-text span{
+    color: var(--logo-color);
+}
+
+.hero-text p{
+    font-size: 1.6rem;
+}
+
+.hero-button{
+    width: fit-content;
+    padding: 1rem;
+    font-size: 1rem;
+    background-color: var(--logo-color);
+    border-radius: 1rem;
+    border: none;
+    cursor: pointer;
+    text-decoration: none;
+    color: black;
+}
+
+.hero-button:hover{
+    background: transparent;
+    border: 2px solid var(--logo-color);
+    color: white;
+}
+
+.hero-text-bottom-line{
+    font-size: 1rem;
+}
+
+.hero-text-bottom-line i{
+    color: var(--logo-color);
+}
+
+@media (max-width: 1000px) {
+    .hero, .hero * { box-sizing: border-box; }
+    .hero-container { height: auto; min-height: 90vh; padding: 3rem 2rem; }
+    .hero-container > img { object-fit: cover; object-position: 70% center; }
+    .hero-text { width: 72%; min-width: 0; padding: 0; gap: 1.5rem; overflow-wrap: break-word; }
+    .hero-text h1 { font-size: clamp(2rem, 4vw, 3rem); line-height: 1.15; }
+    .hero-text p { font-size: 1.15rem; line-height: 1.6; }
+    .hero-button { max-width: 100%; }
+    .hero-text .hero-text-bottom-line { font-size: 1rem; }
+}
+
+@media (max-width: 700px) {
+    .hero-container { min-height: auto; padding: 3rem 1.25rem; }
+    .hero-container > img { object-position: 78% center; opacity: .55; }
+    .hero-container > .overlay { background: linear-gradient(to right, rgba(0,0,0,.88), rgba(0,0,0,.65)); }
+    .hero-text { width: 100%; }
+    .hero-text h1 { font-size: clamp(2rem, 7vw, 2.8rem); }
+    .hero-button { 
+        width: 100%;
+        padding: .3rem .5rem;
+     }
+
+     .hero-text-bottom-line{
+        text-align: center;
+     }
+}
